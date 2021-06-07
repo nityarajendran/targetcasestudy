@@ -7,8 +7,8 @@ public class BarrenLandCaseStudy {
     public static CoordinateSystem[][] mainLandGrid = new CoordinateSystem[mainLandGridWidth][mainLandGridHeight];
     
     public static boolean visitIfUnvisited(CoordinateSystem c) {
-        if (c.getXCoord() < 0 || c.getXCoord() >= mainLandGridWidth) { return false; }
-        if (c.getYCoord() < 0 || c.getYCoord() >= mainLandGridHeight) { return false; }
+        if (c.getXCoord()<0 || c.getXCoord()>mainLandGridWidth-1) { return false; }
+        if (c.getYCoord()<0 || c.getYCoord()>mainLandGridHeight-1) { return false; }
         CoordinateSystem mainC = mainLandGrid[c.getXCoord()][c.getYCoord()];
         if (mainC.isCoordVisited()) { return false; }
         mainC.setCoordAsVisited(true);
