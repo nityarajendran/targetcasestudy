@@ -30,10 +30,10 @@ public class BarrenLandCaseStudy {
                         xCoordVal = c.getXCoord();
                         yCoordVal = c.getYCoord();
                         //check coords above, right, left, below as applicable
-                        if (yCoordVal+1 < mainLandGridHeight && !mainLandGrid[c.getXCoord()][yCoordVal+1].isCoordVisited()) { queue.add(new CoordinateSystem(xCoordVal, yCoordVal + 1)); }
-                        if (xCoordVal+1 < mainLandGridWidth && !mainLandGrid[c.getXCoord()+1][yCoordVal].isCoordVisited()) { queue.add(new CoordinateSystem(xCoordVal + 1, yCoordVal)); }
+                        if (yCoordVal+1 < mainLandGridHeight && !mainLandGrid[c.getXCoord()][yCoordVal+1].isCoordVisited()) { queue.add(new CoordinateSystem(xCoordVal, yCoordVal+1)); }
+                        if (xCoordVal+1 < mainLandGridWidth && !mainLandGrid[c.getXCoord()+1][yCoordVal].isCoordVisited()) { queue.add(new CoordinateSystem(xCoordVal+1, yCoordVal)); }
                         if (xCoordVal-1 >= 0 && !mainLandGrid[c.getXCoord()-1][yCoordVal].isCoordVisited()) { queue.add(new CoordinateSystem(xCoordVal, yCoordVal)); }
-                        if (yCoordVal-1 >= 0 && !mainLandGrid[xCoordVal][yCoordVal-1].isCoordVisited() ) { queue.add(new CoordinateSystem(xCoordVal, yCoordVal - 1)); }
+                        if (yCoordVal-1 >= 0 && !mainLandGrid[xCoordVal][yCoordVal-1].isCoordVisited() ) { queue.add(new CoordinateSystem(xCoordVal, yCoordVal-1)); }
                         }
                     }
 
